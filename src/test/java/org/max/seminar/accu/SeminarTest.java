@@ -30,7 +30,7 @@ public class SeminarTest extends AbstractTest {
                 .when().get(getBaseUrl() + LOCATIONS_V_1_CITIES_AUTOCOMPLETE + "400" + "?yes=yes")
                 .then().statusCode(400);
 
-        HashMap<String,String> hashMap = new HashMap();
+        HashMap<String, String> hashMap = new HashMap();
         hashMap.put("s", "string");
         hashMap.put("i", "integer123");
 
