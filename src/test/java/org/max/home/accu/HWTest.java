@@ -3,27 +3,20 @@ package org.max.home.accu;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.jupiter.api.Test;
 import org.max.home.accu.weather.DailyForecast;
 import org.max.home.accu.weather.Headline;
-import org.max.home.accu.weather.Temperature;
 import org.max.home.accu.weather.Weather;
-import org.max.home.spoon.ConvertAmountsDto;
-import org.mockito.Mockito;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
-import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HWTest extends AbstractTest {
@@ -31,7 +24,7 @@ public class HWTest extends AbstractTest {
     public static final String DAY_10_OF_DAILY_FORECASTS = "/forecasts/v1/daily/10day/50";
 
     private static final Logger logger
-            = LoggerFactory.getLogger(GetWeatherOneDayTest.class);
+            = LoggerFactory.getLogger(AbstractTest.class);
 
     @Test
     void getReturnStatus200ofForecasts1Day() throws IOException {
