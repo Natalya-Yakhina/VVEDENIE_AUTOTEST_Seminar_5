@@ -48,7 +48,7 @@ public class ClassifyCuisineTest extends AbstractTest {
         //when
         HttpResponse response = httpClient.execute(request);
         //then
-        verify(postRequestedFor(urlEqualTo("/recipes/cuisine"))
+        verify(postRequestedFor(urlEqualTo("/recipes/cuisine")) //  проверяет что наш запрос точно содержит то, что мы в него передали
                 .withHeader("Content-Type", equalTo("application/x-www-form-urlencoded")));
         assertEquals(200, response.getStatusLine().getStatusCode());
         ClassifyCuisineDTO bodyToCheck = mapper.readValue(response.getEntity().getContent(), ClassifyCuisineDTO.class);
